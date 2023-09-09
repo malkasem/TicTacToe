@@ -1,5 +1,5 @@
 public class TicTacToe {
-    char [][] board;
+    static char [][] board;
 
     public TicTacToe() {
         board = new char [3][3];
@@ -14,7 +14,7 @@ public class TicTacToe {
         }
     }
 
-    void dispBoard () {
+    static void dispBoard () {
         System.out.println("-------------");
         for (int i = 0; i <board.length; i++){
             System.out.print("| ");
@@ -27,15 +27,15 @@ public class TicTacToe {
     }
 
 
-    void placeToken (int row, int col, char token) {
+    static void placeToken (int row, int col, char token) {
       if(row >= 0 && row <= 2 && col >= 0 && col <= 2 ) {
           board[row][col] = token;
       } else {
-          System.out.println("Oops!! Invalid Position. Try Again Please!! ");
+          System.out.println("Oops!! Invalid Position. Try Again Please!!");
       }
     }
 
-    boolean checkColWin(){
+    static boolean checkColWin(){
         for(int j = 0; j <= 2; j++) {
             if(board[0][j] != ' ' && board[0][j] == board[1][j] && board[1][j] == board[2][j]) {
                 return true;
@@ -46,7 +46,7 @@ public class TicTacToe {
     }
 
 
-    boolean checkRowWin(){
+    static boolean checkRowWin(){
         for(int i = 0; i <= 2; i++) {
             if(board[i][0] != ' ' && board[i][0] == board[i][1] && board[i][1] == board[i][2]) {
                 return true;
@@ -57,7 +57,7 @@ public class TicTacToe {
     }
 
 
-    boolean checkDiagWin (){
+    static boolean checkDiagWin (){
         if(board[0][0] != ' ' && board[0][0] == board[1][1] && board[1][1] == board[2][2]
                 || board[0][2] != ' ' && board[0][2] == board[1][1] && board[1][1] == board[2][0]) {
             return true;
