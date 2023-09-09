@@ -6,4 +6,8 @@ public class Player {
         this.name = name;
         this.token = token;
     }
+
+    void move() {
+       
+    }
 }
